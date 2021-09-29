@@ -1,0 +1,33 @@
+.main-banner {
+  width: 100vw;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main-banner img {
+  width: 90%;
+}
+.main-banner span {
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid #000;
+  border-right: 5px solid #000;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+.main-banner span:hover {
+  opacity: 70%;
+}
+.main-banner .previous-arrow {
+  left: 30px;
+  transform: rotate(135deg);
+}
+.main-banner .next-arrow {
+  right: 30px;
+  transform: rotate(-45deg);
+}/*# sourceMappingURL=main-banner.css.map */

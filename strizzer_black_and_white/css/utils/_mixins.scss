@@ -1,0 +1,16 @@
+@mixin fontTitle($size, $weight) {
+    font-size: $size;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: $weight;
+}
+
+@mixin fontDefault($size) {
+    font-size: $size;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin flexDisplay($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}

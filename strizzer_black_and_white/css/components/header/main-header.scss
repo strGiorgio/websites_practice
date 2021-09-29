@@ -1,0 +1,55 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+.main-header {
+    background-color: $white-default;
+    width: 100vw;
+    max-width: 1920px;
+    padding: 3px 15px;
+    margin: 0 auto 15px;
+    @include flexDisplay(space-between, center);
+    @include fontDefault(1.1rem);
+
+    h2 {
+        @include fontTitle(2rem, bold);
+    }
+
+    nav {
+        @include flexDisplay(center, center);
+
+        ul {
+            display: inline-flex;
+            margin: 0;
+            padding: 0 30px;
+
+            li {
+                list-style-type: none;
+                padding: 3px 10px;
+
+                a {
+                    color: $black-default;
+                    text-decoration: none;
+                }
+                
+                &:hover a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .search-box {
+        padding: 5px 15px;
+        border-bottom: 1px solid $black-default;
+
+        input {
+            border: none;
+            background-color: $white-default;
+            color: $black-low-opacity;
+            width: 160px;
+            outline: none;
+            @include fontDefault(1rem)
+        }
+    }
+
+}   

@@ -1,0 +1,39 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+.main-banner {
+    width: 100vw;
+    max-width: 1920px;
+    margin: 0 auto;
+    @include flexDisplay(center, center);
+    position: relative;
+
+    img {
+        width: 90%;
+    }
+
+    span {
+        width: 30px;
+        height: 30px;
+        border-bottom: 5px solid $black-default;
+        border-right: 5px solid $black-default;
+        border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 70%;
+        }
+    }
+
+    .previous-arrow {
+        left: 30px;
+        transform: rotate(135deg);
+    }
+
+    .next-arrow {
+        right: 30px;
+        transform: rotate(-45deg);
+    }
+}
