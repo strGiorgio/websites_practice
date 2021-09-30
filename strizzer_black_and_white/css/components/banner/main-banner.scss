@@ -1,22 +1,47 @@
-@import '../../utils/variables';
-@import '../../utils/mixins';
+@use '../../utils/variables' as vb;
+@use '../../utils/mixins' as mx;
 
 .main-banner {
     width: 100vw;
     max-width: 1920px;
+    height: calc(100vh - 250px);
     margin: 0 auto;
-    @include flexDisplay(center, center);
+    @include mx.flexDisplay(center, center);
     position: relative;
 
     img {
         width: 90%;
+        height: 100%;
+    }
+
+    .image-banner0 {
+        display: none;
+    }
+    
+    .image-banner1 {
+        display: none;
+    }
+    
+    .image-banner2 {
+        display: none;
+    }
+    
+
+    .image-banner0.active {
+        display: block;
+    }
+    .image-banner2.active {
+        display: block;
+    }
+    .image-banner1.active {
+        display: block;
     }
 
     span {
         width: 30px;
         height: 30px;
-        border-bottom: 5px solid $black-default;
-        border-right: 5px solid $black-default;
+        border-bottom: 5px solid vb.$black-default;
+        border-right: 5px solid vb.$black-default;
         border-radius: 2px;
         position: absolute;
         z-index: 10;

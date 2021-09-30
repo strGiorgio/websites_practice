@@ -1,6 +1,7 @@
 .main-banner {
   width: 100vw;
   max-width: 1920px;
+  height: calc(100vh - 250px);
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -9,6 +10,25 @@
 }
 .main-banner img {
   width: 90%;
+  height: 100%;
+}
+.main-banner .image-banner0 {
+  display: none;
+}
+.main-banner .image-banner1 {
+  display: none;
+}
+.main-banner .image-banner2 {
+  display: none;
+}
+.main-banner .image-banner0.active {
+  display: block;
+}
+.main-banner .image-banner2.active {
+  display: block;
+}
+.main-banner .image-banner1.active {
+  display: block;
 }
 .main-banner span {
   width: 30px;
