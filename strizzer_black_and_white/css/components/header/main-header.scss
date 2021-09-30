@@ -1,21 +1,21 @@
-@import '../../utils/variables';
-@import '../../utils/mixins';
+@use '../../utils/variables' as vb;
+@use '../../utils/mixins' as mx;
 
 .main-header {
-    background-color: $white-default;
+    background-color: vb.$white-default;
     width: 100vw;
     max-width: 1920px;
     padding: 3px 15px;
     margin: 0 auto 15px;
-    @include flexDisplay(space-between, center);
-    @include fontDefault(1.1rem);
+    @include mx.flexDisplay(space-between, center);
+    @include mx.fontDefault(1.1rem);
 
     h2 {
-        @include fontTitle(2rem, bold);
+        @include mx.fontTitle(2rem, bold);
     }
 
     nav {
-        @include flexDisplay(center, center);
+        @include mx.flexDisplay(center, center);
 
         ul {
             display: inline-flex;
@@ -27,7 +27,7 @@
                 padding: 3px 10px;
 
                 a {
-                    color: $black-default;
+                    color: vb.$black-default;
                     text-decoration: none;
                 }
                 
@@ -40,15 +40,15 @@
 
     .search-box {
         padding: 5px 15px;
-        border-bottom: 1px solid $black-default;
+        border-bottom: 1px solid vb.$black-default;
 
         input {
             border: none;
-            background-color: $white-default;
-            color: $black-low-opacity;
+            background-color: vb.$white-default;
+            color: vb.$black-low-opacity;
             width: 160px;
             outline: none;
-            @include fontDefault(1rem)
+            @include mx.fontDefault(1rem)
         }
     }
 
