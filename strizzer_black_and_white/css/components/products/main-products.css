@@ -1,0 +1,40 @@
+.main-products {
+  width: 100%;
+  max-width: 1920px;
+  height: calc(100vh - 250px);
+  max-height: 920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main-products img {
+  width: 90%;
+  height: 100%;
+}
+.main-products .cardPromo {
+  position: absolute;
+  top: 100px;
+  right: 300px;
+  z-index: 10;
+}
+.main-products .cardPromo p {
+  display: flex;
+  font-size: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  background-color: #ff0000;
+}
+.main-products .cardPromo h2 {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+.main-products .cardPromo h2 span {
+  color: #ff0000;
+}/*# sourceMappingURL=main-products.css.map */
