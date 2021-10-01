@@ -2,7 +2,8 @@
   width: 100vw;
   max-width: 1920px;
   height: calc(100vh - 250px);
-  margin: 0 auto;
+  max-height: 920px;
+  margin: 0 auto 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,10 +67,10 @@
   opacity: 70%;
 }
 .main-banner .previous-arrow {
-  left: 30px;
+  left: 35px;
   transform: rotate(135deg);
 }
 .main-banner .next-arrow {
-  right: 30px;
+  right: 35px;
   transform: rotate(-45deg);
 }/*# sourceMappingURL=main-banner.css.map */
