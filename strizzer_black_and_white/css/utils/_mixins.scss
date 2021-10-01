@@ -9,6 +9,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+@mixin fontBold($size) {
+    font-size: $size;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
 @mixin flexDisplay($justify, $align) {
     display: flex;
     justify-content: $justify;
