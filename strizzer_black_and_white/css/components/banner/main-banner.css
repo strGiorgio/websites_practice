@@ -12,25 +12,47 @@
   width: 90%;
   height: 100%;
 }
-.main-banner .image-banner0 {
+.main-banner .image-banner {
   display: none;
+  position: relative;
 }
-.main-banner .image-banner1 {
-  display: none;
-}
-.main-banner .image-banner2 {
-  display: none;
-}
-.main-banner .image-banner0.active {
+.main-banner .image-banner.image-0.active {
   display: block;
 }
-.main-banner .image-banner2.active {
+.main-banner .image-banner.image-2.active {
   display: block;
 }
-.main-banner .image-banner1.active {
+.main-banner .image-banner.image-1.active {
   display: block;
 }
-.main-banner span {
+.main-banner .wrapper-pages-indication {
+  position: absolute;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 10px;
+}
+.main-banner .wrapper-pages-indication .circle {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 50%;
+  border-radius: 50%;
+}
+.main-banner .wrapper-pages-indication .circle.page-0.fill {
+  background-color: #fff;
+  opacity: 100%;
+}
+.main-banner .wrapper-pages-indication .circle.page-1.fill {
+  background-color: #fff;
+  opacity: 100%;
+}
+.main-banner .wrapper-pages-indication .circle.page-2.fill {
+  background-color: #fff;
+  opacity: 100%;
+}
+.main-banner nav {
   width: 30px;
   height: 30px;
   border-bottom: 5px solid #000;
@@ -40,7 +62,7 @@
   z-index: 10;
   cursor: pointer;
 }
-.main-banner span:hover {
+.main-banner nav:hover {
   opacity: 70%;
 }
 .main-banner .previous-arrow {

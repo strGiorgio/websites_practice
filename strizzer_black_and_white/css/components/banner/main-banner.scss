@@ -14,30 +14,51 @@
         height: 100%;
     }
 
-    .image-banner0 {
+    .image-banner {
         display: none;
+        position: relative;
     }
-    
-    .image-banner1 {
-        display: none;
-    }
-    
-    .image-banner2 {
-        display: none;
-    }
-    
 
-    .image-banner0.active {
+    .image-banner.image-0.active {
         display: block;
     }
-    .image-banner2.active {
+    .image-banner.image-2.active {
         display: block;
     }
-    .image-banner1.active {
+    .image-banner.image-1.active {
         display: block;
     }
 
-    span {
+    .wrapper-pages-indication {
+        position: absolute;
+        width: 40px;
+        @include mx.flexDisplay(space-between, center);
+        bottom: 10px;
+
+        .circle {
+            width: 10px;
+            height: 10px;
+            background-color: vb.$white-default;
+            opacity: 50%;
+            border-radius: 50%;
+        }
+
+        .circle.page-0.fill {
+            background-color: vb.$white-default;
+            opacity: 100%;
+        }
+        .circle.page-1.fill {
+            background-color: vb.$white-default;
+            opacity: 100%;
+        }
+        .circle.page-2.fill {
+            background-color: vb.$white-default;
+            opacity: 100%;
+        }
+    }
+    
+
+    nav {
         width: 30px;
         height: 30px;
         border-bottom: 5px solid vb.$black-default;
