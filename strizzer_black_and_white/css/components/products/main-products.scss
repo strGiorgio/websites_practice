@@ -27,7 +27,7 @@
             width: 100px;
             margin: 0 auto;
             padding: 5px 10px;
-            background-color: vb.$red-promo;
+            background-color: vb.$golden-default;
         }
 
         h2 {
@@ -36,7 +36,8 @@
             text-align: center;
             
             span {
-                color: vb.$red-promo;
+                color: vb.$golden-default;
+                text-shadow: 2px 2px 5px vb.$black-low-opacity;
             }
         }
     }

@@ -26,7 +26,7 @@
   width: 100px;
   margin: 0 auto;
   padding: 5px 10px;
-  background-color: #ff0000;
+  background-color: #BBA893;
 }
 .main-products .cardPromo h2 {
   font-size: 2.5rem;
@@ -36,5 +36,6 @@
   text-align: center;
 }
 .main-products .cardPromo h2 span {
-  color: #ff0000;
+  color: #BBA893;
+  text-shadow: 2px 2px 5px #202020c2;
 }/*# sourceMappingURL=main-products.css.map */
