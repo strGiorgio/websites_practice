@@ -1,0 +1,9 @@
+@use '../../utils/variables' as vb;
+@use '../../utils/mixins' as mx;
+
+.main-footer {
+    background-color: red;
+    width: 100vw;
+    max-width: 1920px;
+    height: 200px;
+}
