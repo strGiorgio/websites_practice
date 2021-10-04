@@ -5,5 +5,15 @@
     background-color: red;
     width: 100vw;
     max-width: 1920px;
-    height: 200px;
+    height: 100px;
+    margin-top: 20px;
+    background-color: vb.$white-default;
+    @include mx.flexDisplay(center, center);
+
+    p {
+        @include mx.fontDefault(1.3rem);
+        color: vb.$white-default;
+        background-color: vb.$golden-default;
+        padding: 5px 20px;
+    }
 }
