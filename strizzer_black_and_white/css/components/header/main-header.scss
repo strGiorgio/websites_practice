@@ -5,8 +5,8 @@
     background-color: vb.$white-default;
     width: 100vw;
     max-width: 1920px;
-    padding: 3px 15px;
-    margin: 0 auto 15px;
+    padding: 3px 0;
+    margin-bottom: 15px;
     position: relative;
     @include mx.flexDisplay(space-around, center);
     @include mx.fontDefault(1.1rem);

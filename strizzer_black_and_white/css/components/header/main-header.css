@@ -2,8 +2,8 @@
   background-color: #fff;
   width: 100vw;
   max-width: 1920px;
-  padding: 3px 15px;
-  margin: 0 auto 15px;
+  padding: 3px 0;
+  margin-bottom: 15px;
   position: relative;
   display: flex;
   justify-content: space-around;

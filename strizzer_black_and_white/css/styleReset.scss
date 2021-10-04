@@ -12,4 +12,7 @@ html {
 
 body {
     background-color: vb.$white-secondary;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
