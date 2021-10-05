@@ -24,7 +24,8 @@ export default {
     --yellow-primary: #EFA00B; 
     --orange-primary: #D65108;
 
-    --font-primary: 'Montserrat', sans-serif;; 
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Kufam', sans-serif;
   }
 
   html {
