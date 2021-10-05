@@ -7,6 +7,14 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="wrapper-logo">
+            <h1>Midnight</h1>
+        </div>
+
+        <div class="wrapper-checkbox">
+            <input type="checkbox">
+        </div>
     </header>
 </template>
 
@@ -21,10 +29,13 @@ export default {
         width: 100%;
         padding: 10px;
         border-radius: 30px 30px 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        
     }
 
     nav {
-        width: 30%;
+       
     }
 
     nav ul {
@@ -33,7 +44,7 @@ export default {
         margin: 0;
         display: flex;
         justify-content: space-between;
-        
+        align-items: center;
     }   
 
     nav ul li {
@@ -78,5 +89,20 @@ export default {
         text-decoration: none;
         color: var(--blue-light);
     }
+
+    .wrapper-logo h1 {
+        font: 3rem var(--font-secondary);
+        font-weight: bold;
+        color: var(--blue-light);
+        cursor: pointer;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .wrapper-checkbox {
+        
+        padding: 10px 0;
+    }
+
 
 </style>
