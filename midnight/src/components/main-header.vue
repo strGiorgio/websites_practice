@@ -109,6 +109,8 @@ export default {
 
     .wrapper-checkbox {
         padding: 10px 0;
+        display: flex;
+        justify-content: center;
     }
 
     input[type="checkbox"] {
@@ -119,6 +121,7 @@ export default {
         -webkit-appearance: none;
         position: relative;
         transition: .5s;
+        cursor: pointer;
     }
 
     input:checked[type="checkbox"] {
