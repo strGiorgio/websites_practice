@@ -13,14 +13,26 @@
         </div>
 
         <div class="wrapper-checkbox">
-            <input type="checkbox">
+            <input type="checkbox" v-model="valueC" @click="show">
+            <span class="buttonC"></span>
         </div>
+
     </header>
 </template>
 
 <script>
 export default {
-    name: 'mainHeader'
+    name: 'mainHeader',
+    data() {
+        return {
+            valueC: false
+        }
+    },
+    methods: {
+        show() {
+            console.log(this.valueC)
+        }
+    }
 }
 </script>
 
@@ -32,10 +44,6 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         
-    }
-
-    nav {
-       
     }
 
     nav ul {
@@ -100,9 +108,36 @@ export default {
     }
 
     .wrapper-checkbox {
-        
         padding: 10px 0;
     }
 
+    input[type="checkbox"] {
+        width: 60px;
+        height: 30px;
+        background-color: var(--blue-light);
+        border-radius: 20px;  
+        -webkit-appearance: none;
+        position: relative;
+        transition: .5s;
+    }
+
+    input:checked[type="checkbox"] {
+        background-color: var(--yellow-primary);
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        background-color: var(--blue-dark);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        transition: .5s;
+    }
+
+    input:checked[type="checkbox"]::before {
+        transform: translateX(30px);
+    }
 
 </style>
