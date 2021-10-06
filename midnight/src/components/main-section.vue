@@ -1,27 +1,31 @@
 <template>
-    <div class="container">
+    <div class="main-section">
         <mainHeader />
+        <mainBanner />
     </div>
 </template>
 
 <script>
 import mainHeader from './main-header.vue'
+import mainBanner from './main-banner.vue'
 
 export default {
     name: 'mainSection',
     components: {
-        mainHeader
+        mainHeader,
+        mainBanner
     }
 }
 </script>
 
 <style scoped>
-    .container {
+    .main-section {
         width: 100vw;
         max-width: 1920px;
         height: 100vh;
         max-height: 1080px;
         background-color: var(--blue-primary);
-        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
     } 
 </style>
