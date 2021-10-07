@@ -1,6 +1,7 @@
 <template>
     <div class="main-banner">
-        
+        <h1>Midnight</h1>
+        <img src="/imgs/moon.png" alt="">
     </div>
 </template>
 
@@ -15,6 +16,26 @@ export default {
         width: 100%;
         max-width: 1920px;
         height: 100vh;
-        background-color: #fff;
+        position: relative;
     }
+
+    .main-banner h1 {
+        font: 10rem var(--font-secondary);
+        font-weight: bold;
+        color: var(--blue-light);
+        position: absolute;
+        z-index: 10;
+        left: 40%;
+        top: 500px;
+        text-shadow: 5px 5px 10px var(--blue-dark);
+    }
+
+    .main-banner img {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        left: 50%;
+        top: 150px;
+    }
+
 </style>
