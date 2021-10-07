@@ -1,13 +1,19 @@
 <template>
     <div class="main-banner">
+        <sectionAbout />
         <h1>Midnight</h1>
         <img src="/imgs/moon.png" alt="">
     </div>
 </template>
 
 <script>
+import sectionAbout from './section-about.vue'
+
 export default {
-    name: 'mainBanner'
+    name: 'mainBanner',
+    components: {
+        sectionAbout
+    }
 }
 </script>
 
@@ -25,7 +31,7 @@ export default {
         color: var(--blue-light);
         position: absolute;
         z-index: 10;
-        left: 40%;
+        left: 50%;
         top: 500px;
         text-shadow: 5px 5px 10px var(--blue-dark);
     }
@@ -34,7 +40,7 @@ export default {
         position: absolute;
         width: 500px;
         height: 500px;
-        left: 50%;
+        left: 60%;
         top: 150px;
     }
 
