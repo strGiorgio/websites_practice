@@ -1,6 +1,7 @@
 <template>
     <div class="main-banner">
-        <sectionAbout />
+        <sectionAbout v-show="getAbout" />
+        <sectionContact />
         <h1>Midnight</h1>
         <img src="/imgs/moon.png" alt="">
     </div>
@@ -8,11 +9,18 @@
 
 <script>
 import sectionAbout from './section-about.vue'
+import sectionContact from './section-contact.vue'
 
 export default {
     name: 'mainBanner',
+    data() {
+        return {
+            getAbout: this.$store.state.showAbout
+        }
+    },
     components: {
-        sectionAbout
+        sectionAbout,
+        sectionContact
     }
 }
 </script>
