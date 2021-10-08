@@ -23,6 +23,7 @@ export default {
         max-width: 1920px;
         height: 100vh;
         position: relative;
+        padding: 100px;
     }
 
     .main-banner h1 {
