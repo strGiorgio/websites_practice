@@ -5,8 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    showAbout: false,
-    showContact: true
+    showAbout: true,
+    showContact: false
   },
   mutations: {
   },
