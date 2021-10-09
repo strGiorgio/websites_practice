@@ -58,6 +58,14 @@ export default {
 <style scoped>
     .section-contact {
         width: 30%;
+        transform: translateX(-450px);
+        animation: slideToRight 1s forwards;
+    }
+
+    @keyframes slideToRight {
+        to {
+            transform: translateX(0);
+        }
     }
 
     .section-contact h2 {
