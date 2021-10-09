@@ -3,8 +3,8 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li @click="$emit('aboutClicked')"><a href="#">About Us</a></li>
+                <li @click="$emit('contactsClicked')"><a href="#">Contacts</a></li>
             </ul>
         </nav>
 
@@ -28,9 +28,14 @@ export default {
             valueC: false
         }
     },
+    emits: ['aboutClicked', 'contactsClicked'],
     methods: {
         show() {
             console.log(this.valueC)
+        },
+
+        change(element) {
+            this.$store.commit('change', element);
         }
     }
 }
@@ -59,6 +64,7 @@ export default {
         padding: 10px 30px;
         border-radius: 20px;
         position: relative;
+        cursor: pointer;
     }
 
     nav ul li:hover {
