@@ -1,13 +1,17 @@
 <template>
-    <div class="main-banner">
-        <sectionAbout v-show="getAbout" />
-        <sectionContact v-show="getContact" />
-        <h1>Midnight</h1>
-        <img src="/imgs/moon.png" alt="">
-    </div>
+        <div class="main-banner">
+            <div class="wrapper-header">
+                <mainHeader @aboutClicked="change('about')" @contactsClicked="change('contacts')"/>
+            </div>
+            <sectionAbout v-show="showAbout"/>
+            <sectionContact v-show="showContacts"/>
+            <h1>Midnight</h1>
+            <img src="/imgs/moon.png" alt="">
+        </div>
 </template>
 
 <script>
+import mainHeader from './main-header.vue'
 import sectionAbout from './section-about.vue'
 import sectionContact from './section-contact.vue'
 
@@ -15,13 +19,25 @@ export default {
     name: 'mainBanner',
     data() {
         return {
-            getAbout: this.$store.state.showAbout,
-            getContact: this.$store.state.showContact
+            showAbout: true,
+            showContacts: false
         }
     },
     components: {
+        mainHeader,
         sectionAbout,
         sectionContact
+    },
+    methods: {
+        change(element) {
+            if (element == 'about') {
+                this.showAbout = true;
+                this.showContacts = false;
+            } else if (element == 'contacts') {
+                this.showAbout = false;
+                this.showContacts = true;
+            }
+        }
     }
 }
 </script>
@@ -32,7 +48,14 @@ export default {
         max-width: 1920px;
         height: 100vh;
         position: relative;
-        padding: 100px;
+        padding: 200px 100px;
+    }
+
+    .main-banner .wrapper-header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
     }
 
     .main-banner h1 {
