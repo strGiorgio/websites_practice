@@ -1,18 +1,15 @@
 <template>
     <div class="main-section">
-        <mainHeader />
         <mainBanner />
     </div>
 </template>
 
 <script>
-import mainHeader from './main-header.vue'
 import mainBanner from './main-banner.vue'
 
 export default {
     name: 'mainSection',
     components: {
-        mainHeader,
         mainBanner
     }
 }
