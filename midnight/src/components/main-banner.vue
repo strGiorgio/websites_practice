@@ -48,7 +48,7 @@ export default {
         max-width: 1920px;
         height: 100vh;
         position: relative;
-        padding: 200px 100px;
+        padding: 100px 100px;
     }
 
     .main-banner .wrapper-header {
@@ -67,6 +67,14 @@ export default {
         left: 50%;
         top: 500px;
         text-shadow: 5px 5px 10px var(--blue-dark);
+        transform: translateX(450px);
+        animation: slideToLeft 1s forwards;
+    }
+
+    @keyframes slideToLeft {
+        to {
+            transform: translateX(0);
+        }
     }
 
     .main-banner img {
@@ -75,6 +83,15 @@ export default {
         height: 500px;
         left: 60%;
         top: 150px;
+        transform: translateY(-200px);
+        animation: slideToBottom 5s forwards;
+        z-index: 5;
+    }
+
+    @keyframes slideToBottom {
+        to {
+            transform: translateY(0);
+        }
     }
 
 </style>

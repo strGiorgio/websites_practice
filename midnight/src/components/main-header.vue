@@ -48,7 +48,7 @@ export default {
         border-radius: 30px 30px 0 0;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        
+        z-index: 10;
     }
 
     nav ul {
