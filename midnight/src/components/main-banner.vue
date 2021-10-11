@@ -1,7 +1,8 @@
 <template>
         <div class="main-banner">
             <div class="wrapper-header">
-                <mainHeader @aboutClicked="change('about')" @contactsClicked="change('contacts')"/>
+                <mainHeader @aboutClicked="change('about')" @contactsClicked="change('contacts')" 
+                @homeClicked="change('home')"/>
             </div>
             <sectionAbout v-show="showAbout"/>
             <sectionContact v-show="showContacts"/>
@@ -36,6 +37,9 @@ export default {
             } else if (element == 'contacts') {
                 this.showAbout = false;
                 this.showContacts = true;
+            } else {
+                this.showAbout = false;
+                this.showContacts = false;
             }
         }
     }

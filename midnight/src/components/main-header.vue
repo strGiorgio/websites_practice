@@ -2,7 +2,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li @click="$emit('homeClicked')"><a href="#">Home</a></li>
                 <li @click="$emit('aboutClicked')"><a href="#">About Us</a></li>
                 <li @click="$emit('contactsClicked')"><a href="#">Contacts</a></li>
             </ul>
@@ -28,7 +28,7 @@ export default {
             valueC: false
         }
     },
-    emits: ['aboutClicked', 'contactsClicked'],
+    emits: ['aboutClicked', 'contactsClicked', 'homeClicked'],
     methods: {
         show() {
             console.log(this.valueC)
