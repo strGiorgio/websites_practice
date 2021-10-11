@@ -8,6 +8,7 @@
             <sectionContact v-show="showContacts"/>
             <h1>Midnight</h1>
             <img src="/imgs/moon.png" alt="">
+            <mainFooter />
         </div>
 </template>
 
@@ -15,6 +16,7 @@
 import mainHeader from './main-header.vue'
 import sectionAbout from './section-about.vue'
 import sectionContact from './section-contact.vue'
+import mainFooter from './main-footer.vue'
 
 export default {
     name: 'mainBanner',
@@ -27,7 +29,8 @@ export default {
     components: {
         mainHeader,
         sectionAbout,
-        sectionContact
+        sectionContact,
+        mainFooter
     },
     methods: {
         change(element) {
