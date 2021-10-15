@@ -2,31 +2,35 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/dashboard">About</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  :root {
+    --blue-dark: #1C1F23;
+    --yellow-primary: #F4E409;
+    --yellow-secondary: #EEBA0B;
+  }
 
-#nav {
-  padding: 30px;
-}
+  * {
+    padding: 0;
+    margin: 01;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  html {
+    font-size: 10;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  body {
+    background-color: var(--blue-dark);
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 </style>
