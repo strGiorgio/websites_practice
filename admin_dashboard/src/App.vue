@@ -10,9 +10,13 @@
 
 <style>
   :root {
-    --blue-dark: #1C1F23;
+    --grey-primary: #1C1F23;
+    --grey-secondary: #0f1114;
     --yellow-primary: #F4E409;
     --yellow-secondary: #EEBA0B;
+    --white-primary: aliceblue; 
+
+    --font-primary: Helvetica, sans-serif; 
   }
 
   * {
@@ -25,7 +29,7 @@
   }
 
   body {
-    background-color: var(--blue-dark);
+    background-color: var(--grey-primary);
   }
 
   #app {
