@@ -7,8 +7,8 @@
             <label for="passwd">Password:</label>
             <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required>
 
-            <button>Submit</button>
-            <a href="#">Sign Up</a>
+            <button>Login</button>
+            <a href="#" @click="changeScreen">Sign Up</a>
         </div>
 
         <div class="signUp-wrapper" v-show="showSignUp">
@@ -22,7 +22,7 @@
             <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required>
 
             <button>Sign Up</button>
-            <a href="#">Login</a>
+            <a href="#" @click="changeScreen">Login</a>
         </div>
 
     </form>
@@ -38,7 +38,10 @@ export default {
         }
     },
     methods: {
-        
+        changeScreen() {
+            this.showLogin = !this.showLogin;
+            this.showSignUp = !this.showSignUp;
+        }
     }
 
 }
