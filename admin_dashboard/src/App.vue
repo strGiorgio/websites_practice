@@ -11,9 +11,8 @@
 <style>
   :root {
     --grey-primary: #1C1F23;
-    --grey-secondary: #0f1114;
-    --yellow-primary: #F4E409;
-    --yellow-secondary: #EEBA0B;
+    --grey-secondary: #181b1f;
+    --blue-primary: #061A40;
     --white-primary: aliceblue; 
 
     --font-primary: Helvetica, sans-serif; 
