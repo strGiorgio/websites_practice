@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/dashboard">About</router-link>
+      <router-link to="/" class="router-links">Home</router-link> |
+      <router-link to="/dashboard" class="router-links">Dashboard</router-link>
     </div>
     <router-view/>
   </div>
@@ -34,6 +34,15 @@
   #app {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+
+  .router-links {
+    font: 1.3rem var(--font-primary);
+    text-decoration: none;
+    color: var(--white-primary);
+  }
+
+  .router-links:hover {
+    text-decoration: underline;
   }
 </style>
