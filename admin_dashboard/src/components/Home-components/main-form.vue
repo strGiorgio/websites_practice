@@ -1,13 +1,13 @@
 <template>
     <form class="form">
-        <div class="login-wrapper" v-show="showLogin">
+        <div class="signIn-wrapper" v-show="showsignIn">
             <label for="name">Name:</label>
             <input id="name" type="text"  v-model="name" maxlength="24" minlength="2" required>
 
             <label for="passwd">Password:</label>
             <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required>
 
-            <button>Login</button>
+            <button>Sign In</button>
             <a href="#" @click="changeScreen">Sign Up</a>
         </div>
 
@@ -22,7 +22,7 @@
             <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required>
 
             <button>Sign Up</button>
-            <a href="#" @click="changeScreen">Login</a>
+            <a href="#" @click="changeScreen">Sign In</a>
         </div>
 
     </form>
@@ -33,13 +33,13 @@ export default {
     name: 'mainForm',
     data() {
         return {
-            showLogin: true,
+            showsignIn: true,
             showSignUp: false
         }
     },
     methods: {
         changeScreen() {
-            this.showLogin = !this.showLogin;
+            this.showsignIn = !this.showsignIn;
             this.showSignUp = !this.showSignUp;
         }
     }
@@ -60,7 +60,7 @@ export default {
         background: linear-gradient(var(--grey-primary), 75%, var(--grey-secondary));
     }
 
-    .form .login-wrapper {
+    .form .signIn-wrapper {
     }
 
     .form label {
