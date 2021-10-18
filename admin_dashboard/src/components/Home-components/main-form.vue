@@ -1,11 +1,11 @@
 <template>
-    <form class="form">
+    <form class="form" @submit="submited($event)">
         <div class="signIn-wrapper" v-show="showsignIn">
             <label for="name">Name:</label>
-            <input id="name" type="text"  v-model="name" maxlength="24" minlength="2" required>
+            <input id="name" type="text"  v-model="name" maxlength="24" minlength="2" required placeholder="Ex: Rodrigo Salier">
 
             <label for="passwd">Password:</label>
-            <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required>
+            <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required placeholder="Ex: 209rodri5621">
 
             <button>Sign In</button>
             <a href="#" @click="changeScreen">Sign Up</a>
@@ -13,13 +13,13 @@
 
         <div class="signUp-wrapper" v-show="showSignUp">
             <label for="name">Name:</label>
-            <input id="name" type="text"  v-model="name" maxlength="24" minlength="2" required>
+            <input id="name" type="text"  v-model="name" maxlength="24" minlength="2" required placeholder="Ex: Rodrigo Salier">
 
             <label for="email">Email:</label>
-            <input id="email" type="text"  v-model="email">
+            <input id="email" type="text"  v-model="email" placeholder="Ex: rodrigosali@salier.com">
 
             <label for="passwd">Password:</label>
-            <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required>
+            <input id="passwd" type="password" v-model="passwd" maxlength="24" minlength="4" required placeholder="Ex: 209rodri5621">
 
             <button>Sign Up</button>
             <a href="#" @click="changeScreen">Sign In</a>
@@ -34,13 +34,28 @@ export default {
     data() {
         return {
             showsignIn: true,
-            showSignUp: false
+            showSignUp: false,
+            name: null,
+            email: null,
+            passwd: null,
+            showButton: null
         }
     },
     methods: {
         changeScreen() {
             this.showsignIn = !this.showsignIn;
             this.showSignUp = !this.showSignUp;
+        },
+
+        submited(e) {
+            e.preventDefault()
+            if (this.showsignIn) {
+                //console.log('Sign In, enviado!', this.name, this.passwd)
+                this.$store.dispatch({type: 'postUser', amount: 10})
+            } else {
+                console.log('Sign Up, enviado!', this.name, this.email, this.passwd)
+            }
+            
         }
     }
 
@@ -56,11 +71,8 @@ export default {
         padding: 40px;
         border-radius: 30px;
         box-shadow: 10px 10px 10px var(--grey-secondary);
-        margin: 0 auto;
+        margin: 30px auto;
         background: linear-gradient(var(--grey-primary), 75%, var(--grey-secondary));
-    }
-
-    .form .signIn-wrapper {
     }
 
     .form label {
@@ -107,7 +119,7 @@ export default {
     }
 
     .form button:hover::after {
-        transform: translate(-400px);
+        transform: translate(-800px);
     }
 
     .form button:hover {
