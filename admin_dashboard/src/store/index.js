@@ -9,6 +9,9 @@ export default new Vuex.Store({
   mutations: {
   },
   actions: {
+    postUser(payload) {
+      console.log(payload)
+    }
   },
   modules: {
   }
