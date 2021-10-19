@@ -5,19 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    idAdmin: false,
-    urlUserDataBase: 'http://localhost:3000/users'
+    isAdmin: false,
+    userExist: false,
   },
   mutations: {
-    
+    userExist(state, payload) {
+      state.userExist = payload;
+    }
   },
   actions: {
-    async postUser(state, payload) {
-      console.log(payload)
-      const insert = await fetch('http://localhost:3000/users');
-      const resInsert = await insert.json();
-      console.log(resInsert)
+    async postUser(context, payload) {
+      const userDB = await fetch('http://localhost:3000/users');
+      const users = await userDB.json();
 
+      for (var i in users) {
+        if (payload.name == users[i].name  && payload.passwd == users[i].passwd) {
+          context.commit('userExist', true)
+        }
+      }
     }
   },
   modules: {
