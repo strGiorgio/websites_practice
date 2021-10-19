@@ -50,8 +50,12 @@ export default {
         submited(e) {
             e.preventDefault()
             if (this.showsignIn) {
-                //console.log('Sign In, enviado!', this.name, this.passwd)
-                this.$store.dispatch({type: 'postUser', amount: 10})
+                //call a action with user arguments
+                const user = {
+                    name: this.name,
+                    passwd: this.passwd
+                }
+                this.$store.dispatch('postUser', user)
             } else {
                 console.log('Sign Up, enviado!', this.name, this.email, this.passwd)
             }
