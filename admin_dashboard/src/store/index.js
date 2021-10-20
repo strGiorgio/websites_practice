@@ -18,8 +18,8 @@ export default new Vuex.Store({
       const userDB = await fetch('http://localhost:3000/users');
       const users = await userDB.json();
 
-      for (var i in users) {
-        if (payload.name == users[i].name  && payload.passwd == users[i].passwd) {
+      for(var i in users) {
+        if(payload.name == users[i].name  && payload.passwd == users[i].passwd) {
           context.commit('userExist', true)
           
           return 'User Exists!'
@@ -29,6 +29,20 @@ export default new Vuex.Store({
       }
     },
 
+    async postUser(context, payload) {
+      const userDB = await fetch('http://localhost:3000/users');
+      const users = await userDB.json();
+
+      for(var i in users) {
+        if(payload.name == users[i].name && payload.email == users[i].email) {
+          console.log('Name and Email Already Exists!')
+        } else if(payload.name == users[i].name) {
+            console.log('Name Already Exists!')
+          } else if(payload.email == users[i].email) {
+            console.log('Email Already Exists!')
+          }
+      }
+    }
   },
   modules: {
   }
