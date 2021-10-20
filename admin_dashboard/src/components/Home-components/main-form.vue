@@ -55,11 +55,17 @@ export default {
                     name: this.name,
                     passwd: this.passwd
                 }
-                this.$store.dispatch('postUser', user)
+                const msg = this.$store.dispatch('verifyUser', user)
+                console.log(msg)
             } else {
-                console.log('Sign Up, enviado!', this.name, this.email, this.passwd)
+                const user = {
+                    name: this.name,
+                    email: this.email,
+                    passwd: this.passwd
+                }
+                const msg = this.$store.dispatch('postUser')
+                console.log('Sign Up, enviado!', this.name, this.email, this.passwd, user)
             }
-            
         }
     }
 
