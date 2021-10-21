@@ -58,14 +58,19 @@ export default {
                 const msg = this.$store.dispatch('verifyUser', user)
                 console.log(msg)
             } else {
+                //call a action with user arguments
                 const user = {
                     name: this.name,
                     email: this.email,
                     passwd: this.passwd
                 }
-                const msg = this.$store.dispatch('postUser')
-                console.log('Sign Up, enviado!', this.name, this.email, this.passwd, user)
+                this.$store.dispatch('postUser', user)
             }
+            setTimeout(() => {
+                this.name = null,
+                this.passwd = null,
+                this.email = null
+            }, 1000)
         }
     }
 
