@@ -64,7 +64,8 @@ export default {
                     email: this.email,
                     passwd: this.passwd
                 }
-                this.$store.dispatch('postUser', user)
+                const msg = this.$store.dispatch('postUser', user)
+                console.log(msg)
             }
             setTimeout(() => {
                 this.name = null,

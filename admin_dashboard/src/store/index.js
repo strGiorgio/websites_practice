@@ -52,7 +52,7 @@ export default new Vuex.Store({
       }
 
       if (context.state.userExist) {
-        console.log('Can`t Post')
+        return 'Can`t Post!'
       } else {
         const postUser = await fetch('http://localhost:3000/users', {
           method: 'POST',
@@ -60,6 +60,8 @@ export default new Vuex.Store({
           body: JSON.stringify(payload)
         });
         console.log(postUser)
+        console.log('User Posted!')
+        return 'User Posted!';
       }
     }
   },
