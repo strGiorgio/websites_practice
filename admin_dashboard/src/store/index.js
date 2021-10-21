@@ -32,25 +32,29 @@ export default new Vuex.Store({
     async postUser(context, payload) {
       const userDB = await fetch('http://localhost:3000/users');
       const users = await userDB.json();
+      context.commit('userExist', false)
 
       for(var i in users) {
         //Verify if user name or email already exists
         if(payload.name == users[i].name && payload.email == users[i].email) {
           console.log('Name and Email Already Exists!')
+          context.commit('userExist', true)
+          break
         } else if(payload.name == users[i].name) {
             console.log('Name Already Exists!')
-          } else if(payload.email == users[i].email) {
+            context.commit('userExist', true)
+            break
+        } else if(payload.email == users[i].email) {
             console.log('Email Already Exists!')
-          } else {
-            //Post User
-            const postUser = await fetch('http://localhost:3000/users', {
-              method: 'POST',
-              headers: {"Content-Type" : "application/json"},
-              body: JSON.stringify(payload)
-            });
-            const resPostUser = await postUser.json()
-            console.log(resPostUser)
-          }
+            context.commit('userExist', true)
+            break
+        } 
+      }
+
+      if (context.state.userExist) {
+        console.log('Cant Post')
+      } else {
+        console.log('Can Post')
       }
     }
   },
