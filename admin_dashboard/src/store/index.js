@@ -7,10 +7,15 @@ export default new Vuex.Store({
   state: {
     isAdmin: false,
     userExist: false,
+    msg: null
   },
   mutations: {
     userExist(state, payload) {
       state.userExist = payload;
+    },
+
+    changeMsg(state, payload) {
+      state.msg = payload;
     }
   },
   actions: {
@@ -22,9 +27,13 @@ export default new Vuex.Store({
         if(payload.name == users[i].name  && payload.passwd == users[i].passwd) {
           context.commit('userExist', true)
           
-          return 'User Exists!'
+          context.commit('changeMsg', 'Logged!')
+          console.log(context.state.msg)
+          break
         } else {
-          return 'Users Doesn`t Exists!'
+          context.commit('changeMsg', 'User Doesn`t Exists!')
+          console.log(context.state.msg)
+          break
         }
       }
     },
@@ -52,7 +61,8 @@ export default new Vuex.Store({
       }
 
       if (context.state.userExist) {
-        return 'Can`t Post!'
+        context.commit('changeMsg', 'Can`t Post')
+        console.log(context.state.msg)
       } else {
         const postUser = await fetch('http://localhost:3000/users', {
           method: 'POST',
@@ -60,8 +70,9 @@ export default new Vuex.Store({
           body: JSON.stringify(payload)
         });
         console.log(postUser)
-        console.log('User Posted!')
-        return 'User Posted!';
+      
+        context.commit('changeMsg', 'User Posted!')
+        console.log(context.state.msg)
       }
     }
   },
