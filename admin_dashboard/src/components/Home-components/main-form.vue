@@ -72,7 +72,6 @@ export default {
                 this.$store.dispatch('postUser', user)
                 
             }
-            
 
             setTimeout(() => {
                 this.name = null,
@@ -97,6 +96,13 @@ export default {
         box-shadow: 10px 10px 10px var(--grey-secondary);
         margin: 30px auto;
         background: linear-gradient(var(--grey-primary), 75%, var(--grey-secondary));
+    }
+    .form .msg {
+        border: 1px solid var(--blue-primary);
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        border-radius: 20px;
     }
 
     .form p {
