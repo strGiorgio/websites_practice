@@ -1,5 +1,10 @@
 <template>
     <form class="form" @submit="submited($event)">
+        <div class="msg">
+            <p>{{ this.$store.state.msg }}</p>
+        </div>
+
+
         <div class="signIn-wrapper" v-show="showsignIn">
             <label for="name">Name:</label>
             <input id="name" type="text"  v-model="name" maxlength="24" minlength="2" required placeholder="Ex: Rodrigo Salier">
@@ -24,7 +29,6 @@
             <button>Sign Up</button>
             <a href="#" @click="changeScreen">Sign In</a>
         </div>
-
     </form>
 </template>
 
@@ -38,7 +42,8 @@ export default {
             name: null,
             email: null,
             passwd: null,
-            showButton: null
+            showButton: null,
+            
         }
     },
     methods: {
@@ -55,8 +60,8 @@ export default {
                     name: this.name,
                     passwd: this.passwd
                 }
-                const msg = this.$store.dispatch('verifyUser', user)
-                console.log(msg)
+                this.$store.dispatch('verifyUser', user)
+                
             } else {
                 //call a action with user arguments
                 const user = {
@@ -64,14 +69,17 @@ export default {
                     email: this.email,
                     passwd: this.passwd
                 }
-                const msg = this.$store.dispatch('postUser', user)
-                console.log(msg)
+                this.$store.dispatch('postUser', user)
+                
             }
+            
+
             setTimeout(() => {
                 this.name = null,
                 this.passwd = null,
                 this.email = null
             }, 1000)
+            
         }
     }
 
@@ -89,6 +97,11 @@ export default {
         box-shadow: 10px 10px 10px var(--grey-secondary);
         margin: 30px auto;
         background: linear-gradient(var(--grey-primary), 75%, var(--grey-secondary));
+    }
+
+    .form p {
+        color: var(--white-primary);
+        font: 1.2rem var(--font-primary);
     }
 
     .form label {
