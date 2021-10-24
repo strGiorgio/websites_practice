@@ -16,6 +16,10 @@ export default new Vuex.Store({
 
     changeMsg(state, payload) {
       state.msg = payload;
+    },
+
+    changeIsAdmin(state, payload) {
+      state.isAdmin = payload;
     }
   },
   actions: {
@@ -26,6 +30,12 @@ export default new Vuex.Store({
       for(var i in users) {
         if(payload.name == users[i].name  && payload.passwd == users[i].passwd) {
           context.commit('userExist', true)
+          
+          if (users[i].permissionLevel == 'admin') {
+            context.commit('changeIsAdmin', true)
+          } else {
+            context.commit('changeIsAdmin', false)
+          }
           break
 
         }else {
@@ -35,7 +45,7 @@ export default new Vuex.Store({
 
       if (context.state.userExist) {
         context.commit('changeMsg', 'Logged!')
-        console.log(context.state.msg)
+        console.log(context.state.msg, context.state.isAdmin)
 
       } else {
         context.commit('changeMsg', 'User Doesn`t Exists!')
