@@ -67,7 +67,8 @@ export default {
                 const user = {
                     name: this.name,
                     email: this.email,
-                    passwd: this.passwd
+                    passwd: this.passwd,
+                    permissionLevel: 'user'
                 }
                 this.$store.dispatch('postUser', user)
                 
