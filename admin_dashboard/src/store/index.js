@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isAdmin: false,
+    isAdmin: true,
     userExist: false,
     msg: null
   },
@@ -26,15 +26,20 @@ export default new Vuex.Store({
       for(var i in users) {
         if(payload.name == users[i].name  && payload.passwd == users[i].passwd) {
           context.commit('userExist', true)
-          
-          context.commit('changeMsg', 'Logged!')
-          console.log(context.state.msg)
           break
-        } else {
-          context.commit('changeMsg', 'User Doesn`t Exists!')
-          console.log(context.state.msg)
-          break
+
+        }else {
+          context.commit('userExist', false)
         }
+      }
+
+      if (context.state.userExist) {
+        context.commit('changeMsg', 'Logged!')
+        console.log(context.state.msg)
+
+      } else {
+        context.commit('changeMsg', 'User Doesn`t Exists!')
+        console.log(context.state.msg)
       }
     },
 
