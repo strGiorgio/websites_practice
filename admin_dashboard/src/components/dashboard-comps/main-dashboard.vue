@@ -1,18 +1,80 @@
 <template>
     <div class="main-dashboard">
-        <p v-if="this.$store.state.isAdmin">Se você for admin, verá essa mensagem</p>
-        <p v-else>Caso não seja admin, verá essa mensagem!</p>
+        <div v-if="!this.$store.state.isAdmin">Caso não seja admin, verá essa mensagem!</div>
+        <div v-else class="box-admin">
+            <div class="card-user" v-for="user in users" :key="user.id">
+                <p>User Name: <span>{{ user.name }}</span></p>
+                <p>User email: <span>{{ user.email }}</span></p>
+                <div class="wrapper-action">
+                    <a href="#">Promote</a>
+                    <a href="#">Delete</a>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'mainDashboard'    
+    name: 'mainDashboard',
+    data() {
+        return {
+            users: []
+        }
+    },
+    methods: {
+        async getUsers() {
+            const req = await fetch('http://localhost:3000/users');
+            const res = await req.json();
+
+            this.users = res;
+            console.log(this.users)
+        }
+    },
+    created() {
+        this.getUsers()
+    }
 }
 </script>
 
 <style scoped>
-    p {
+    .box-admin {
+        border: 2px solid var(--blue-primary);
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 10px 10px 10px var(--grey-secondary);
+        padding: 20px;
+    }
+
+    .card-user {
+        border: 2px solid var(--blue-primary);
+        border-radius: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+    
+    .card-user p {
+        font: 1.2rem Helvetica, sans-serif;
         color: var(--white-primary);
+    }
+
+    .card-user span {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .card-user .wrapper-action {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .card-user .wrapper-action a {
+        font: 1.1rem Helvetica, sans-serif;
+        color: var(--white-primary);
+        text-decoration: none;
     }
 </style>
