@@ -9,8 +9,8 @@
                     <p>Permission Level: <span>{{ user.permissionLevel }}</span></p>
                 </div>
                 <div class="wrapper-action">
-                    <a href="#">Promote</a>
-                    <a href="#">Delete</a>
+                    <a href="#" @click="adminAction(1, user.id)">Promote</a>
+                    <a href="#" @click="adminAction(2, user.id)">Delete</a>
                 </div>
             </div>
         </div>
@@ -32,6 +32,15 @@ export default {
 
             this.users = res;
             console.log(this.users)
+        },
+
+        async adminAction(action, id) {
+            if (action == 1) {  
+                console.log('promoted', id)
+            } else {
+                console.log('deleted', id)
+            }
+            
         }
     },
     created() {
