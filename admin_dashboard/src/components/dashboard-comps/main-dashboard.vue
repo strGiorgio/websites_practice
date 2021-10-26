@@ -3,8 +3,11 @@
         <div v-if="!this.$store.state.isAdmin">Caso não seja admin, verá essa mensagem!</div>
         <div v-else class="box-admin">
             <div class="card-user" v-for="user in users" :key="user.id">
-                <p>User Name: <span>{{ user.name }}</span></p>
-                <p>User email: <span>{{ user.email }}</span></p>
+                <div class="wrapper-infos">
+                    <p>User Name: <span>{{ user.name }}</span></p>
+                    <p>User email: <span>{{ user.email }}</span></p>
+                    <p>Permission Level: <span>{{ user.permissionLevel }}</span></p>
+                </div>
                 <div class="wrapper-action">
                     <a href="#">Promote</a>
                     <a href="#">Delete</a>
@@ -53,12 +56,14 @@ export default {
         margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
+        align-content: center;
         padding: 0 40px;
     }
     
     .card-user p {
         font: 1.2rem Helvetica, sans-serif;
         color: var(--white-primary);
+        text-align: start;
     }
 
     .card-user span {
@@ -76,5 +81,12 @@ export default {
         font: 1.1rem Helvetica, sans-serif;
         color: var(--white-primary);
         text-decoration: none;
+        padding: 5px 10px;
+        box-sizing: border-box ;
+        border-radius: 20px;
+    }
+
+    .card-user .wrapper-action a:hover {
+        background-color: var(--white-low);
     }
 </style>
