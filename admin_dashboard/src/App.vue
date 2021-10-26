@@ -14,6 +14,7 @@
     --grey-secondary: #181b1f;
     --blue-primary: #061A40;
     --white-primary: aliceblue; 
+    --white-low: rgba(255, 255, 255, 0.363);
 
     --font-primary: Helvetica, sans-serif; 
   }
