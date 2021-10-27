@@ -15,3 +15,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  h1 {
+    font: 3rem Helvetica, sans-serif;
+    color: var(--white-primary);
+  }
+</style>
