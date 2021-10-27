@@ -89,6 +89,25 @@ export default new Vuex.Store({
         context.commit('changeMsg', 'User Posted!')
         console.log(context.state.msg)
       }
+    },
+
+    async adminAction(context, payload) {
+      const id = payload.userId;
+
+      if (payload.adminAction == "promote") {
+        const data = JSON.stringify({ permissionLevel: "admin"})
+
+        const resPromote = fetch(`http://localhost:3000/users/${id}`, {
+          method: 'PATCH',
+          headers: {"Content-Type" : "application/json"},
+          body: data
+        })
+
+        console.log(resPromote)
+        
+      } else {
+        console.log('del')
+      }
     }
   },
   modules: {
