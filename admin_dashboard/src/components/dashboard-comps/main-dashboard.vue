@@ -1,6 +1,8 @@
 <template>
     <div class="main-dashboard">
-        <div v-if="!this.$store.state.isAdmin">Caso não seja admin, verá essa mensagem!</div>
+        <div v-if="!this.$store.state.isAdmin">
+            <p>Caso não seja admin, verá essa mensagem!</p>
+        </div>
         <div v-else class="box-admin">
             <div class="card-user" v-for="user in users" :key="user.id">
                 <div class="wrapper-infos">
@@ -97,5 +99,9 @@ export default {
 
     .card-user .wrapper-action a:hover {
         background-color: var(--white-low);
+    }
+
+    p {
+        color: var(--white-primary);
     }
 </style>
