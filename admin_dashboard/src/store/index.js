@@ -97,16 +97,22 @@ export default new Vuex.Store({
       if (payload.adminAction == "promote") {
         const data = JSON.stringify({ permissionLevel: "admin"})
 
-        const resPromote = fetch(`http://localhost:3000/users/${id}`, {
+        const reqPromote = await fetch(`http://localhost:3000/users/${id}`, {
           method: 'PATCH',
           headers: {"Content-Type" : "application/json"},
           body: data
         })
 
-        console.log(resPromote)
+        console.log(reqPromote)
+        console.log('User Promoted')
         
       } else {
-        console.log('del')
+        const reqDelete = await fetch(`http://localhost:3000/users/${id}`, {
+          method: 'DELETE'
+        })
+
+        console.log(reqDelete)
+        console.log('user Deleted')
       }
     }
   },
