@@ -33,7 +33,6 @@ export default {
             const res = await req.json();
 
             this.users = res;
-            console.log(this.users)
         },
 
         adminAction(action, id) {
