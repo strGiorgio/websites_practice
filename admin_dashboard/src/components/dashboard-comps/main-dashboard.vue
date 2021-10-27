@@ -11,8 +11,8 @@
                     <p>Permission Level: <span>{{ user.permissionLevel }}</span></p>
                 </div>
                 <div class="wrapper-action">
-                    <a href="#" @click="adminAction(1, user.id)">Promote</a>
-                    <a href="#" @click="adminAction(2, user.id)">Delete</a>
+                    <a href="#" @click="adminAction('promote', user.id)">Promote</a>
+                    <a href="#" @click="adminAction('delete', user.id)">Delete</a>
                 </div>
             </div>
         </div>
@@ -36,12 +36,13 @@ export default {
             console.log(this.users)
         },
 
-        async adminAction(action, id) {
-            if (action == 1) {  
-                console.log('promoted', id)
-            } else {
-                console.log('deleted', id)
+        adminAction(action, id) {
+            const data = {
+                adminAction: action,
+                userId: id 
             }
+            this.$store.dispatch('adminAction', data)
+            
             
         }
     },
