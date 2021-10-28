@@ -72,6 +72,7 @@ export default {
         border-radius: 20px;
         margin: 0 auto;
         margin-bottom: 20px;
+        font: 1.5rem Helvetica, sans-serif;
     }
 
     .card-user {
