@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isAdmin: true,
+    adminActionRes: "sale",
     userExist: false,
     msg: null
   },
@@ -20,6 +21,10 @@ export default new Vuex.Store({
 
     changeIsAdmin(state, payload) {
       state.isAdmin = payload;
+    },
+
+    changeAdminMsg(state, payload) {
+      state.adminActionRes = payload;
     }
   },
   actions: {
@@ -104,7 +109,7 @@ export default new Vuex.Store({
         })
 
         console.log(reqPromote)
-        console.log('User Promoted')
+        context.commit('changeAdminMsg', "User Promoted to admin")
         
       } else {
         const reqDelete = await fetch(`http://localhost:3000/users/${id}`, {
@@ -112,7 +117,7 @@ export default new Vuex.Store({
         })
 
         console.log(reqDelete)
-        console.log('user Deleted')
+        context.commit('changeAdminMsg', "User Deleted")
       }
     }
   },
