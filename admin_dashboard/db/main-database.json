@@ -1,10 +1,46 @@
 {
-    "users": [
-        {
-            "name": "Giroudo",
-            "email": "giroudinho@gmail.com",
-            "passwd": "123girou",
-            "id": 1
-        }
-    ]
+  "users": [
+    {
+      "name": "Giroudo",
+      "email": "giroudinho@gmail.com",
+      "passwd": "123girou",
+      "permissionLevel": "admin",
+      "id": 1
+    },
+    {
+      "name": "Giorgio",
+      "email": "gigi@perigo.com",
+      "passwd": "1098726gio",
+      "permissionLevel": "admin",
+      "id": 3
+    },
+    {
+      "name": "Antony Lombrinha",
+      "email": "odeiomeuchefe@gmail.com",
+      "passwd": "00769",
+      "permissionLevel": "user",
+      "id": 4
+    },
+    {
+      "name": "Maria Salafraira",
+      "email": "mariazinhadobqt@gmail.com",
+      "passwd": "696969",
+      "permissionLevel": "user",
+      "id": 5
+    },
+    {
+      "name": "Maria Sapateira",
+      "email": "sapateria@gmail.com",
+      "passwd": "00990",
+      "permissionLevel": "user",
+      "id": 6
+    },
+    {
+      "name": "Roger Guedes",
+      "email": "corinthians@gmail.com",
+      "passwd": "123123",
+      "permissionLevel": "user",
+      "id": 7
+    }
+  ]
 }
