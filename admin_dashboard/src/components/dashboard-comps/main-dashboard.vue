@@ -1,5 +1,9 @@
 <template>
     <div class="main-dashboard">
+        <div class="wrapper-msg">
+            <p>{{ this.$store.state.adminActionRes }}</p>
+        </div>
+
         <div v-if="!this.$store.state.isAdmin">
             <p>Caso não seja admin, verá essa mensagem!</p>
         </div>
@@ -59,6 +63,15 @@ export default {
         border-radius: 20px;
         box-shadow: 10px 10px 10px var(--grey-secondary);
         padding: 20px;
+    }
+
+    .wrapper-msg {
+        width: 70%;
+        border: 2px solid var(--blue-primary);
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-bottom: 20px;
     }
 
     .card-user {
