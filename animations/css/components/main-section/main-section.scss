@@ -1,0 +1,7 @@
+@use '../utils/variables' as vb;
+
+.main-section {
+    background-color: vb.$black-primary;
+    width: 100vw;
+    height: 100vh;
+}
