@@ -8,6 +8,17 @@ for (var i = 0; i < icon.length; i ++) {
 }
 
 function activate(e) {
-    console.log(e, n)
-    this.style.transform = "rotate(180deg)"
+    console.log(e, this.id)
+    for (var i in box) {
+        if (box[i].id == this.id) {
+            console.log(box[i].id)
+            const boxText = document.querySelector(`article>#${box[i].id}`)
+            boxText.classList.add('active')
+        }
+    }
+
+    for (var i = 0; i < icon.length; i ++) {
+        icon[i].classList.remove('active')
+    }
+    this.classList.add('active')
 }
