@@ -24,7 +24,7 @@ svg {
     transition: .6s;
 }
 
-article:hover svg {
+.icon.active {
     transform: rotate(180deg);
 }
 
@@ -40,7 +40,7 @@ h2 {
     overflow: hidden;
 }
 
-article:hover .wrapper-text {
+.wrapper-text.active{
     display: block;
 }
 
