@@ -2,21 +2,22 @@ const icon = document.querySelectorAll('.icon');
 const box = document.querySelectorAll('.wrapper-text');
 
 for (var i = 0; i < icon.length; i ++) {
-    console.log(icon[i])
-    console.log(box[i].id)
     icon[i].addEventListener('click', activate)
 }
 
 function activate(e) {
-    console.log(e, this.id)
+    //BOX
+    for (var i = 0; i < box.length; i ++) {
+        box[i].classList.remove('active')
+    }
+
     for (var i in box) {
         if (box[i].id == this.id) {
-            console.log(box[i].id)
             const boxText = document.querySelector(`article>#${box[i].id}`)
             boxText.classList.add('active')
         }
     }
-
+    //ICON
     for (var i = 0; i < icon.length; i ++) {
         icon[i].classList.remove('active')
     }
