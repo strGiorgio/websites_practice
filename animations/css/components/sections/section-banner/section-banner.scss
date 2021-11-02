@@ -1,0 +1,22 @@
+@use '../../../utils/variables' as vb;
+
+.section-banner {
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-texts {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    background-color: vb.$black-primary;
+    z-index: 5;
+    bottom: 0;
+}
