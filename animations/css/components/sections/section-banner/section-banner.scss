@@ -1,4 +1,5 @@
 @use '../../../utils/variables' as vb;
+@use '../../../utils/mixins' as mx;
 
 .section-banner {
     width: 100vw;
@@ -16,11 +17,14 @@ img {
     width: 50%;
     height: 50%;
     position: absolute;
-    background-color: vb.$black-primary;
+    background-color: vb.$black-low;
     z-index: 5;
     right: 0px;
     top: 300px;
     padding: 20px;
+    @include mx.flexDisplay();
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .content-texts h1 {
@@ -28,8 +32,40 @@ img {
     font-weight: 600;
     text-align: center;
     margin-bottom: 50px;
+    color: vb.$white-primary;
 }
 
 .content-texts p {
-    text-align: center;
+    margin-bottom: 6px;
 }
+
+.content-texts div:nth-of-type(1) {
+    transform: translateX(-950px);
+    animation: slideToRight 1s forwards;
+}
+
+.content-texts div:nth-of-type(2) {
+    transform: translateX(950px);
+    animation: slideToLeft 1s forwards;
+    animation-delay: .8s;
+}
+
+.content-texts div:nth-of-type(3) {
+    transform: translateX(-950px);
+    animation: slideToRight 1s forwards;
+    animation-delay: 1.3s;
+}
+
+
+@keyframes slideToRight {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideToLeft {
+    to {
+        transform: translateX(0);
+    }
+}
+
