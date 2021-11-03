@@ -1,8 +1,9 @@
-@use '../../utils/variables' as vb;
+@use '../../../utils/variables' as vb;
 
 .section-faqs {
     background-color: vb.$black-primary;
     width: 100vw;
     display: flex;
     justify-content: center;
+    padding: 100px 0;
 }
