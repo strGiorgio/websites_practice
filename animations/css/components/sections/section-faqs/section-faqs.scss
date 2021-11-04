@@ -3,7 +3,9 @@
 .section-faqs {
     background-color: vb.$black-primary;
     width: 100vw;
+    max-width: 1920px;
     display: flex;
     justify-content: center;
     padding: 100px 0;
+    margin: 0 auto;
 }

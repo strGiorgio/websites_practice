@@ -3,9 +3,12 @@
 
 .section-banner {
     width: 100vw;
+    max-width: 1920px;
     height: 100vh;
+    max-height: 1080px;
     background-color: red;
     position: relative;
+    margin: 0 auto;
 }
 
 img {
@@ -28,7 +31,6 @@ img {
 }
 
 .content-texts h1 {
-    font: 3rem Helvetica, sans-serif;
     font-weight: 600;
     text-align: center;
     margin-bottom: 50px;
