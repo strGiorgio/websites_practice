@@ -8,4 +8,10 @@
     height: 100vh;
     max-height: 1280px;
     margin: 0 auto;
+    padding: 50px;
+}
+
+.section-about div:nth-of-type(1) {
+    border-bottom: 7px solid vb.$blue-primary;
+    width: 40%;
 }
