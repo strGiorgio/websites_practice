@@ -48,3 +48,9 @@
 .section-about .box-article p, .box-article h2 {
     color: vb.$black-primary;
 }
+
+@media (max-width: 840px) {
+    .section-about .wrapper-title-borders div:nth-of-type(1) {
+        width: 80%;
+    }
+}
