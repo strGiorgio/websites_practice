@@ -35,16 +35,39 @@
 
 .section-about .box-article.box-left {
   align-self: start;
+  transform: translateX(-850px);
+}
+
+.section-about .box-article.box-left.active {
+  -webkit-animation: slide 2s forwards cubic-bezier(0.16, 0.91, 0.74, 0.05);
+          animation: slide 2s forwards cubic-bezier(0.16, 0.91, 0.74, 0.05);
 }
 
 .section-about .box-article.box-right {
   align-self: end;
+  transform: translateX(850px);
+}
+
+.section-about .box-article.box-right.active {
+  -webkit-animation: slide 2s forwards cubic-bezier(0.16, 0.91, 0.74, 0.05);
+          animation: slide 2s forwards cubic-bezier(0.16, 0.91, 0.74, 0.05);
 }
 
 .section-about .box-article p, .box-article h2 {
   color: #0d0d0d;
 }
 
+@-webkit-keyframes slide {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(0);
+  }
+}
 @media (max-width: 840px) {
   .section-about .wrapper-title-borders div:nth-of-type(1) {
     width: 80%;
