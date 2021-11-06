@@ -83,4 +83,9 @@ img {
   to {
     transform: translateX(0);
   }
+}
+@media (max-width: 840px) {
+  .content-texts {
+    width: 80%;
+  }
 }/*# sourceMappingURL=section-banner.css.map */
