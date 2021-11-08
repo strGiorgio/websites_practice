@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    isDay: false,
     showAbout: null,
     showContact: null
   },
