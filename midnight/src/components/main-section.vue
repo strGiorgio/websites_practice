@@ -24,6 +24,6 @@ export default {
         background-color: var(--blue-primary);
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow-x: hidden;
     } 
 </style>
