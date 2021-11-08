@@ -6,8 +6,10 @@
             </div>
             <sectionAbout v-show="showAbout"/>
             <sectionContact v-show="showContacts"/>
+
             <h1>Midnight</h1>
             <img src="/imgs/moon.png" alt="">
+
             <mainFooter />
         </div>
 </template>
@@ -92,12 +94,31 @@ export default {
         top: 150px;
         transform: translateY(-200px);
         animation: slideToBottom 5s forwards;
-        z-index: 5;
+        z-index: 0;
     }
 
     @keyframes slideToBottom {
         to {
             transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .main-banner {
+            display: flex;
+            padding: 800px 100px;
+        }
+
+        .main-banner h1 {
+            font-size: 7rem;
+            top: 580px;
+            left: 300px;
+        }
+
+        .main-banner img {
+            position: absolute;
+            left: 120px;
+            top: 210px;
         }
     }
 
