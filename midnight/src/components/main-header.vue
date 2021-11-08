@@ -25,7 +25,7 @@ export default {
     name: 'mainHeader',
     data() {
         return {
-            valueC: false
+            valueC: this.$store.state.isDay
         }
     },
     emits: ['aboutClicked', 'contactsClicked', 'homeClicked'],
@@ -147,6 +147,20 @@ export default {
 
     input:checked[type="checkbox"]::before {
         transform: translateX(30px);
+    }
+
+    @media (max-width: 768px) {
+        header {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        nav ul li {
+            font-size: 1.1rem;
+        }
     }
 
 </style>
