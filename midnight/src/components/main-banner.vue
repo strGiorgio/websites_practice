@@ -106,7 +106,7 @@ export default {
     @media (max-width: 768px) {
         .main-banner {
             display: flex;
-            padding: 800px 100px;
+            padding: 800px 100px 600px;
         }
 
         .main-banner h1 {
@@ -123,6 +123,10 @@ export default {
     }
 
     @media (max-width: 640px) {
+        .main-banner {
+            padding: 800px 100px 0;
+        }
+
         .main-banner h1 {
             font-size: 6rem;
             top: 580px;
