@@ -21,6 +21,7 @@ export default {
         width: 30%;
         transform: translateX(-450px);
         animation: slideToRight 1s forwards;
+        z-index: 10;
     }
 
     @keyframes slideToRight {
@@ -47,5 +48,11 @@ export default {
         font: 2rem var(--font-primary);
         color: var(--blue-light);
         line-height: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        .section-about {
+            width: 90%;
+        }
     }
 </style>
