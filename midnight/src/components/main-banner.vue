@@ -122,4 +122,46 @@ export default {
         }
     }
 
+    @media (max-width: 640px) {
+        .main-banner h1 {
+            font-size: 6rem;
+            top: 580px;
+            left: 190px;
+        }
+
+        .main-banner img {
+            position: absolute;
+            left: 80px;
+            top: 210px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-banner h1 {
+            font-size: 6rem;
+            top: 580px;
+            left: 100px;
+        }
+
+        .main-banner img {
+            position: absolute;
+            left: 80px;
+            top: 210px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .main-banner h1 {
+            font-size: 6rem;
+            top: 580px;
+            left: 50px;
+        }
+
+        .main-banner img {
+            position: absolute;
+            left: 80px;
+            top: 210px;
+        }
+    }
+
 </style>
