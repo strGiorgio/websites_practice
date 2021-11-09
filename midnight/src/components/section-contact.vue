@@ -98,4 +98,11 @@ export default {
     .section-contact svg {
         margin: 0 15px 30px 0 ;
     }
+
+    
+    @media (max-width: 768px) {
+        .section-contact {
+            width: 90%;
+        }
+    }
 </style>
