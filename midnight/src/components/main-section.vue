@@ -1,6 +1,6 @@
 <template>
     <div class="main-section">
-        <mainBanner />
+        <mainBanner/>
     </div>
 </template>
 

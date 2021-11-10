@@ -25,13 +25,13 @@ export default {
     name: 'mainHeader',
     data() {
         return {
-            valueC: this.$store.state.isDay
+            valueC: this.$store.state.isNight
         }
     },
     emits: ['aboutClicked', 'contactsClicked', 'homeClicked'],
     methods: {
         show() {
-            setTimeout(() => {this.$store.commit('changeDay')}, 300)
+            setTimeout(() => {this.$store.commit('changeNight')}, 300)
             
         },
 

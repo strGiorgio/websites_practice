@@ -5,7 +5,7 @@
                 @homeClicked="change('home')"/>
             </div>
 
-            <div v-show="this.$store.state.isDay">
+            <div v-show="this.$store.state.isNight">
                 <sectionAbout v-show="showAbout"/>
                 <sectionContact v-show="showContacts"/>
             
