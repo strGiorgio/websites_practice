@@ -5,11 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isDay: false,
+    isDay: true,
     showAbout: null,
     showContact: null
   },
   mutations: {
+    changeDay(state) {
+      state.isDay = !state.isDay
+      console.log(state.isDay)
+    },
+
     change(state, payload) {
 
       if (payload == 'about') {
