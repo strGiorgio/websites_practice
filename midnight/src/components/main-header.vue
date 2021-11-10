@@ -31,7 +31,8 @@ export default {
     emits: ['aboutClicked', 'contactsClicked', 'homeClicked'],
     methods: {
         show() {
-            console.log(this.valueC)
+            setTimeout(() => {this.$store.commit('changeDay')}, 300)
+            
         },
 
         change(element) {
