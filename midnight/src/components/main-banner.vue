@@ -4,13 +4,16 @@
                 <mainHeader @aboutClicked="change('about')" @contactsClicked="change('contacts')" 
                 @homeClicked="change('home')"/>
             </div>
-            <sectionAbout v-show="showAbout"/>
-            <sectionContact v-show="showContacts"/>
 
-            <h1>Midnight</h1>
-            <img src="/imgs/moon.png" alt="">
+            <div v-show="this.$store.state.isDay">
+                <sectionAbout v-show="showAbout"/>
+                <sectionContact v-show="showContacts"/>
+            
+                <h1>Midnight</h1>
+                <img src="/imgs/moon.png" alt="">
 
-            <mainFooter />
+                <mainFooter />
+            </div>
         </div>
 </template>
 
