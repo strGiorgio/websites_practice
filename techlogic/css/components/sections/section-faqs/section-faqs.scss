@@ -9,3 +9,60 @@
     padding: 100px 0;
     margin: 0 auto;
 }
+
+.wrapper-faqs {
+    width: 60%;
+}
+
+article {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.wrapper-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: vb.$black-primary;
+    z-index: 5;
+    border-bottom: 2px solid vb.$white-primary;
+}
+
+svg {
+    transition: .6s;
+}
+
+.icon.active {
+    transform: rotate(180deg);
+}
+
+h2 {
+    font: 1.7rem Helvetica, sans-serif;
+    font-weight: bold;
+    color: vb.$white-primary;
+}
+
+.wrapper-text {
+    padding: 10px;
+    display: none;
+    overflow: hidden;
+}
+
+.wrapper-text.active{
+    display: block;
+}
+
+p {
+    font: 1rem Helvetica, sans-serif;
+    color: vb.$white-primary;
+    transform: translateY(-50px);
+    animation: slideToBottom 1s forwards;
+    z-index: 3;
+}
+
+@keyframes slideToBottom {
+    to {
+        transform: translateY(0);
+    }
+}
