@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isAdmin: true,
+    isAdmin: false,
     adminActionRes: null,
     userExist: false,
     msg: null
