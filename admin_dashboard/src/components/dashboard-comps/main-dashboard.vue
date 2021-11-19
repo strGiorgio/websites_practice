@@ -45,8 +45,7 @@ export default {
                 userId: id 
             }
             this.$store.dispatch('adminAction', data)
-            
-            
+            setTimeout(() => {window.location.reload(true)}, 2000)
         }
     },
     created() {
