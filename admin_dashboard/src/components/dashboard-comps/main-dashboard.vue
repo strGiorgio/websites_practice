@@ -5,7 +5,7 @@
         </div>
 
         <div v-if="!this.$store.state.isAdmin">
-            <p>Caso não seja admin, verá essa mensagem!</p>
+            <p>You aren`t a admin</p>
         </div>
         <div v-else class="box-admin">
             <div class="card-user" v-for="user in users" :key="user.id">
