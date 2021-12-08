@@ -1,0 +1,11 @@
+.img-sites {
+    width: 450px;
+    height: 250px;
+    margin: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.img-sites:hover {
+    transform: scale(1.02);
+}
