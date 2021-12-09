@@ -1,7 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-section {
+    width: 100vw;
+    height: 100vh;
+    max-width: 1980px;
+    margin: 0 auto;
+    background-color: #0b0125;
+}
+
 h1 {
     font: 3rem Helvetica, sans-serif;
     font-weight: bold;
     text-align: center;
+    color: aliceblue;
+    margin-bottom: 50px;
 }
 
 .img-sites {
